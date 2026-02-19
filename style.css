@@ -1,0 +1,144 @@
+/* Import modern, bold Montserrat font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: radial-gradient(circle at center, #0b0f19, #16213e, #0f3460);
+    font-family: 'Montserrat', sans-serif; /* Modern Official Font */
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+}
+
+/* Screen containers for fading effects */
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease-in-out, visibility 1s;
+}
+
+#birthday-screen {
+    opacity: 0;
+    visibility: hidden;
+    z-index: 5;
+}
+
+#welcome-screen {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+}
+
+/* Welcome Screen Styling */
+.welcome-subtitle {
+    font-size: 1.2rem;
+    font-weight: 700; /* Bold */
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #a0d2eb;
+    margin-bottom: 15px;
+}
+
+.welcome-title {
+    font-size: 3rem;
+    font-weight: 900; /* Ultra Bold */
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Modern Glowing Button */
+button {
+    margin-top: 50px;
+    padding: 18px 45px;
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; /* Bold */
+    color: #fff;
+    background: transparent;
+    border: 3px solid #00f2fe;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+button:hover {
+    background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    border-color: transparent;
+    box-shadow: 0 0 30px rgba(0, 242, 254, 0.7);
+    transform: scale(1.05);
+    color: #0b0f19; /* Dark text on hover for contrast */
+}
+
+/* Birthday Screen Styling */
+h1 {
+    font-size: 6rem; /* Huge modern text */
+    font-weight: 900; /* Ultra Bold */
+    margin: 0;
+    line-height: 1.1;
+    background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(79, 172, 254, 0.4);
+    animation: breathe 3s ease-in-out infinite;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 700; /* Bold */
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    color: #a0d2eb;
+}
+
+p {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #e0e0e0;
+    letter-spacing: 1px;
+}
+
+/* Butterfly Styling */
+.butterfly {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    filter: drop-shadow(0 0 12px rgba(0, 191, 255, 0.8));
+    opacity: 0;
+    z-index: 1;
+}
+
+.butterfly path {
+    fill: #00BFFF; 
+}
+
+/* Animations */
+@keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+}
+
+@keyframes flutter {
+    0% { transform: translateX(0) translateY(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    25% { transform: translateX(50px) translateY(-50px) rotate(15deg); }
+    50% { transform: translateX(-50px) translateY(-150px) rotate(-15deg); }
+    75% { transform: translateX(50px) translateY(-300px) rotate(10deg); }
+    100% { transform: translateX(-20px) translateY(-500px) rotate(-10deg); opacity: 0; }
+}
